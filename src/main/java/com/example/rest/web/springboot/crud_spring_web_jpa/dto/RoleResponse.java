@@ -1,11 +1,17 @@
 package com.example.rest.web.springboot.crud_spring_web_jpa.dto;
 
-import jakarta.validation.constraints.NotBlank;
+public class RoleResponse {
 
-public class RoleRequest {
-
-    @NotBlank
+    private Integer id;
     private String name;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
