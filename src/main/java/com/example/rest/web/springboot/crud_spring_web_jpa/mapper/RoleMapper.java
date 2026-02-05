@@ -14,7 +14,6 @@ import com.example.rest.web.springboot.crud_spring_web_jpa.entities.Role;
 public interface RoleMapper {
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "users", ignore = true)
     Role toEntity(RoleRequest request);
 
     RoleResponse toResponse(Role entity);
