@@ -12,6 +12,10 @@ public class ProductUpdateResponse {
 
     private String description;
 
+    private String sku;
+
+    private String category;
+
     public String getName() {
         return name;
     }
@@ -36,5 +40,22 @@ public class ProductUpdateResponse {
         this.description = description;
     }
 
+    public String getSku() {
+        return sku;
+    }
+
+    public void setSku(String sku) {
+        this.sku = sku;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    
     
 }
