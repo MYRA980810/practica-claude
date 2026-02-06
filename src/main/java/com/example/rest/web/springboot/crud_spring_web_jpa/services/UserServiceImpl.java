@@ -3,6 +3,7 @@ package com.example.rest.web.springboot.crud_spring_web_jpa.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +12,7 @@ import com.example.rest.web.springboot.crud_spring_web_jpa.dto.UserResponse;
 import com.example.rest.web.springboot.crud_spring_web_jpa.entities.User;
 import com.example.rest.web.springboot.crud_spring_web_jpa.exceptions.ResourceNotFoundException;
 import com.example.rest.web.springboot.crud_spring_web_jpa.mapper.UserMapper;
+import com.example.rest.web.springboot.crud_spring_web_jpa.repositories.RoleRepository;
 import com.example.rest.web.springboot.crud_spring_web_jpa.repositories.UserRepository;
 
 @Service
@@ -21,6 +23,12 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private RoleRepository roleRepository;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Transactional(readOnly = true)
     public UserResponse findAll(){

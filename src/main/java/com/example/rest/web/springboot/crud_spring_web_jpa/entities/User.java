@@ -15,6 +15,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.persistence.UniqueConstraint;
 
 @Entity
@@ -42,6 +43,9 @@ public class User {
         uniqueConstraints = @UniqueConstraint(columnNames = {"user_id","role_id"})
     )
     private Set<Role> roles;
+
+    @Transient
+    private boolean admin;
 
     public User(){
         this.roles = new HashSet<>();
@@ -85,6 +89,14 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public boolean isAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(boolean admin) {
+        this.admin = admin;
     }
 
     
