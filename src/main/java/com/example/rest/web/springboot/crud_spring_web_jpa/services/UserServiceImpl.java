@@ -1,5 +1,7 @@
 package com.example.rest.web.springboot.crud_spring_web_jpa.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +21,11 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Transactional(readOnly = true)
+    public UserResponse findAll(){
+        return (UserResponse) userMapper.toResponseList((List<User>) userRepository.findAll());
+    }
 
     @Override
     @Transactional
