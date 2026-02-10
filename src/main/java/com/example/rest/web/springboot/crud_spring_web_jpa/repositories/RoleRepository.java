@@ -1,6 +1,8 @@
 package com.example.rest.web.springboot.crud_spring_web_jpa.repositories;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.data.repository.CrudRepository;
 
@@ -9,4 +11,5 @@ import com.example.rest.web.springboot.crud_spring_web_jpa.entities.Role;
 public interface RoleRepository extends CrudRepository<Role, Integer> {
     Optional<Role> findByName(String name);
     boolean existsByName(String name);
+    List<Role> findByNameIn(Set<String> names);
 }

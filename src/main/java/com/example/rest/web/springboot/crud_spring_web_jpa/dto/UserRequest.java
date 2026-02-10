@@ -14,6 +14,8 @@ public class UserRequest {
 
     private Boolean enable;
 
+    private Boolean admin;
+
     public String getUsername() {
         return username;
     }
@@ -37,6 +39,16 @@ public class UserRequest {
     public void setEnable(Boolean enable) {
         this.enable = enable;
     }
+
+    public Boolean getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
+
+    
 
     
 }

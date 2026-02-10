@@ -7,6 +7,7 @@ public class UserResponse {
     private String username;
     private Boolean enable;
     private Set<RoleResponse> roles;
+    private Boolean admin;
     
     public String getUsername() {
         return username;
@@ -26,6 +27,20 @@ public class UserResponse {
     public void setId(Integer id) {
         this.id = id;
     }
+    public Boolean getAdmin() {
+        return admin;
+    }
+    public void setAdmin(Boolean admin) {
+        this.admin = admin;
+    }
+    public Set<RoleResponse> getRoles() {
+        return roles;
+    }
+    public void setRoles(Set<RoleResponse> roles) {
+        this.roles = roles;
+    }
+
+    
 
     
 
